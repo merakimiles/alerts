@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Event {
+  id             String   @id @default(cuid())
+  dedupeKey      String   @unique
+  occurredAt     DateTime @db.Timestamptz(3)
+  receivedAt     DateTime @default(now()) @db.Timestamptz(3)
+  alertType      String
+  severity       String?
+  organizationId String?
+  networkId      String?
+  deviceSerial   String?
+  deviceMac      String?
+  deviceName     String?
+  clientMac      String?
+  imageUrl       String?
+  details        String?
+  raw            Json
+
+  @@index([occurredAt])
+  @@index([alertType])
+}
+

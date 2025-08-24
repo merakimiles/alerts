@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [],
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "resolveJsonModule": true
+  }
+}
+

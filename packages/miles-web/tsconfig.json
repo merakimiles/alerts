@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "include": ["src", "vite-env.d.ts"]
+}
+
