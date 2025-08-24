@@ -169,11 +169,11 @@ app.get('/api/events', async (req, res) => {
   if (since || until) where.occurredAt = { gte: since ?? undefined, lte: until ?? undefined };
   if (q) {
     where.OR = [
-      { details: { contains: q, mode: 'insensitive' } },
-      { deviceName: { contains: q, mode: 'insensitive' } },
-      { deviceSerial: { contains: q, mode: 'insensitive' } },
-      { networkId: { contains: q, mode: 'insensitive' } },
-      { alertType: { contains: q, mode: 'insensitive' } },
+      { details: { contains: q } as any },
+      { deviceName: { contains: q } as any },
+      { deviceSerial: { contains: q } as any },
+      { networkId: { contains: q } as any },
+      { alertType: { contains: q } as any },
     ];
   }
 
